@@ -137,7 +137,7 @@
       <programlisting><![CDATA[public interface Interceptor<T> extends Bean<T> {
     public Set<Annotation> getInterceptorBindings();
     public boolean intercepts(InterceptionType type);
-    public Object intercept(InterceptionType type, T instance, InvocationContext ctx);
+    public Object intercept(InterceptionType type, T instance, InvocationContext ctx) throws Exception;
 }]]></programlisting>
 
       <itemizedlist>
@@ -148,7 +148,7 @@
         <listitem>
           <para><literal>intercepts()</literal> returns <literal>true</literal> if 
           the interceptor intercepts the specified kind of lifecycle callback or 
-          method invocation, and <literal>false</literal> otherwise.</para>
+          method invocation, and <literal>false</literal> otherwise. </para>
         </listitem>
         <listitem>
           <para><literal>intercept()</literal> invokes the specified kind of lifecycle 
